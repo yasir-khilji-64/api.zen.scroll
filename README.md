@@ -28,8 +28,8 @@ Zen Scroll is built using a modern and developer focused tech stack to ensure hi
 
 ### Backend
 
-- **Go:** An open-source programming language that makes it easy to build simple, reliable, and efficient software. Developed by Google, Go is known for its robust performance and excellent support for concurrent programming.
-- **Echo:** A high-performance, minimalist Go web framework that provides a robust set of features for building APIs and web applications.
+- **Node.js:** Javascript runtime built on Chrome's V8 engine, providing scalable and efficient environment for server-side applications.
+- **Express:** Minimal and flexible Node.js web application framework that offers a robust set of features for building APIs and web applications.
 - **MongoDB:** A NoSQL database known for its flexibility and scalability, ideal for handling large amount of unstructured data.
 
 ### Authentication
@@ -38,7 +38,8 @@ Zen Scroll is built using a modern and developer focused tech stack to ensure hi
 
 ### Development and Deployment
 
-- **Golangci-lint** and **Gofumpt:** Tools for maintaining code quality and consistency through linting and formatting.
+- **Typescript:** A superset of javascript that adds static types, enhanching code quality and maintainability.
+- **ESLint** and **Prettier:** Tools for maintaining code quality and consistency through linting and formatting.
 - **Github Actions:** For continuous integration and continuous deployment, automating the build, test and deployment pipeline.
 
 ### Hosting and Infrastructure
