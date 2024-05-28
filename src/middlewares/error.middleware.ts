@@ -1,12 +1,13 @@
 import { NextFunction, Request, Response } from 'express';
 
+import HttpStatus from '../utils/htttp-status.enum';
 import { Config } from '../utils/config';
 import { ErrorResponse } from '../types/error-response.type';
 
 const env = Config.GetInstance().env;
 
 export function notFound(req: Request, res: Response, next: NextFunction) {
-  res.status(404);
+  res.status(HttpStatus.NOT_FOUND);
   const error = new Error(`🔍 - Not Found - ${req.originalUrl}`);
   next(error);
 }
@@ -18,7 +19,10 @@ export function errorHandler(
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   __: NextFunction,
 ) {
-  const statusCode = res.statusCode !== 200 ? res.statusCode : 500;
+  const statusCode =
+    res.statusCode !== HttpStatus.OK
+      ? res.statusCode
+      : HttpStatus.INTERNAL_SERVER_ERROR;
   res.status(statusCode);
   res.json({
     status: statusCode,

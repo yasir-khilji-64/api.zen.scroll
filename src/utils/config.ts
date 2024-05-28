@@ -15,6 +15,10 @@ export class Config {
     NODE_ENV: z
       .union([z.literal('dev'), z.literal('test'), z.literal('prod')])
       .default('dev'),
+    MONGO_HOST: z.string({ message: 'MongoDB host not provided' }),
+    MONGO_USERNAME: z.string({ message: 'MongoDB username not provided' }),
+    MONGO_PASSWORD: z.string({ message: 'MongoDB password not provided' }),
+    MONGO_DATABASE: z.string({ message: 'MongoDB database not provided' }),
   });
   private constructor() {
     this.env = Config.schema.parse(process.env);

@@ -25,7 +25,7 @@ class Logger {
         silly: 'rainbow',
       });
       Logger.instance = createLogger({
-        defaultMeta: {},
+        defaultMeta: { component: 'logger' },
         format: format.combine(
           format.timestamp({
             format: 'YYYY-MM-DDTHH:MM:sss.SSS',
@@ -40,8 +40,8 @@ class Logger {
                 all: true,
               }),
               format.printf(
-                ({ level, message, service, timestamp }) =>
-                  `[${timestamp} ${service ?? 'error'}] ${level}: ${message}`,
+                ({ level, message, component, timestamp }) =>
+                  `[${timestamp}] [${component}] ${level}: ${message}`,
               ),
             ),
           }),
