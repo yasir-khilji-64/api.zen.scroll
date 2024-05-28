@@ -4,11 +4,13 @@ import express, { Request, Response } from 'express';
 
 import { notFound, errorHandler } from './middlewares/error.middleware';
 import { MessageResponse } from './types/message-response.type';
+import { RequestLogger } from './middlewares/request-logger.middleware';
 
 const app = express();
 
 app.use(cors());
 app.use(helmet());
+app.use(RequestLogger);
 app.use(express.json());
 
 app.get('/', (_: Request, res: Response<MessageResponse>) => {
